@@ -1,47 +1,47 @@
-# GitHub 差异评论按钮开关
+# GitHub Diff Comment Button Toggle
 
-适用于 Microsoft Edge 和 Google Chrome 的 Manifest V3 扩展。用于显示或隐藏 GitHub 文件差异页代码行左侧悬浮的蓝色评论 `+` 按钮。
+A Manifest V3 extension for Microsoft Edge and Google Chrome. It allows you to show or hide the blue comment `+` button that appears on the left side of code lines on GitHub file diff pages.
 
-## 功能
+## Features
 
-- 工具栏弹窗一键显示或隐藏行评论 `+` 按钮。
-- 切换后当前页面即时生效。
-- 支持 GitHub PR `Files changed` 新旧路由、比较页和提交差异页。
-- 开关状态保存在浏览器扩展存储中。
-- 不读取代码内容，不发送网络请求，不收集数据。
+- Show or hide the line comment `+` button with a single toggle in the extension popup.
+- Changes take effect immediately on the current page.
+- Supports both old and new GitHub PR `Files changed` routes, compare pages, and commit diff pages.
+- The toggle state is stored in the browser extension storage.
+- Does not read code content, send network requests, or collect data.
 
-## Chrome 安装
+## Chrome Installation
 
-1. 解压 ZIP 文件。
-2. 打开 `chrome://extensions`。
-3. 开启“开发者模式”。
-4. 点击“加载已解压的扩展程序”。
-5. 选择包含 `manifest.json` 的 `github-diff-comment-toggle` 文件夹。
+1. Extract the ZIP file.
+2. Open `chrome://extensions`.
+3. Enable **Developer mode**.
+4. Click **Load unpacked**.
+5. Select the `github-diff-comment-toggle` folder containing `manifest.json`.
 
-## Edge 安装
+## Edge Installation
 
-1. 解压 ZIP 文件。
-2. 打开 `edge://extensions`。
-3. 开启“开发人员模式”。
-4. 点击“加载解压缩的扩展”。
-5. 选择包含 `manifest.json` 的 `github-diff-comment-toggle` 文件夹。
+1. Extract the ZIP file.
+2. Open `edge://extensions`.
+3. Enable **Developer mode**.
+4. Click **Load unpacked**.
+5. Select the `github-diff-comment-toggle` folder containing `manifest.json`.
 
-## 使用
+## Usage
 
-1. 打开 GitHub 文件差异页。
-2. 点击浏览器工具栏中的插件图标。
-3. 切换“显示蓝色评论 + 按钮”。
+1. Open a GitHub file diff page.
+2. Click the extension icon in the browser toolbar.
+3. Toggle **Show blue comment + button**.
 
-首次安装时已经打开的 GitHub 页面需要刷新一次。
+GitHub pages that were already open when the extension was first installed need to be refreshed once.
 
-## 权限
+## Permissions
 
-- `storage`：保存一个布尔开关值。
-- `https://github.com/*`：在 GitHub 页面注入用于隐藏按钮的 CSS 和状态脚本。
+- `storage`: Stores a Boolean toggle value.
+- `https://github.com/*`: Injects the CSS and state script used to hide the button on GitHub pages.
 
-## 开发信息
+## Development Information
 
-- 版本：`1.0.0`
-- 清单版本：Manifest V3
-- 主要选择器：`td.diff-text-cell button[aria-label="Add comment"]`
-- 兼容旧版选择器：`.js-add-line-comment`、`.add-line-comment`
+- Version: `1.0.0`
+- Manifest version: Manifest V3
+- Primary selector: `td.diff-text-cell button[aria-label="Add comment"]`
+- Legacy selectors: `.js-add-line-comment`, `.add-line-comment`
