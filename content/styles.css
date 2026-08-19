@@ -1,0 +1,37 @@
+/*
+ * GitHub Diff Comment Toggle
+ *
+ * Current React diff UI: the hover button is mounted inside td.diff-text-cell
+ * with aria-label="Add comment". The remaining selectors cover older GitHub
+ * diff implementations and minor accessibility-label variations.
+ */
+html.ghdct-hidden.ghdct-diff-page td.diff-text-cell button[aria-label="Add comment"],
+html.ghdct-hidden.ghdct-diff-page td.diff-text-cell button[aria-label^="Add comment "],
+html.ghdct-hidden.ghdct-diff-page td.diff-text-cell button[aria-label="Add a comment"],
+html.ghdct-hidden.ghdct-diff-page td.diff-text-cell button[aria-label^="Add a comment "],
+html.ghdct-hidden.ghdct-diff-page td.diff-text-cell button[aria-label="Add line comment"],
+html.ghdct-hidden.ghdct-diff-page td.diff-text-cell button[aria-label^="Add line comment "],
+html.ghdct-hidden.ghdct-diff-page td[data-grid-cell-id] button[data-testid="add-line-comment-button"],
+html.ghdct-hidden.ghdct-diff-page td[data-grid-cell-id] button[data-testid="add-comment-button"],
+html.ghdct-hidden.ghdct-diff-page td[data-grid-cell-id] button[data-testid*="add-line-comment"],
+html.ghdct-hidden.ghdct-diff-page td[data-grid-cell-id] button[data-testid*="add-comment"],
+html.ghdct-hidden.ghdct-diff-page button.js-add-line-comment,
+html.ghdct-hidden.ghdct-diff-page .js-add-line-comment,
+html.ghdct-hidden.ghdct-diff-page button.add-line-comment,
+html.ghdct-hidden.ghdct-diff-page .add-line-comment {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+
+@supports selector(button:has(svg)) {
+  html.ghdct-hidden.ghdct-diff-page td.diff-text-cell button:has(svg.octicon-plus),
+  html.ghdct-hidden.ghdct-diff-page td[data-grid-cell-id] button:has(svg.octicon-plus) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}

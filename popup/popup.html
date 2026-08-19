@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GitHub 差异评论按钮开关</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img class="logo" src="../icons/icon48.png" width="40" height="40" alt="" />
+      <div>
+        <h1>GitHub 差异评论</h1>
+        <p>行评论按钮开关</p>
+      </div>
+    </header>
+
+    <main>
+      <label class="setting" for="visibilityToggle">
+        <span class="setting-copy">
+          <span class="setting-title">显示蓝色评论 + 按钮</span>
+          <span class="setting-description">控制文件差异代码行旁的悬浮评论按钮</span>
+        </span>
+        <span class="switch">
+          <input
+            id="visibilityToggle"
+            type="checkbox"
+            role="switch"
+            aria-label="显示蓝色评论 + 按钮"
+          />
+          <span class="slider" aria-hidden="true"></span>
+        </span>
+      </label>
+
+      <section class="status-card" id="statusCard" aria-live="polite">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="statusText">正在读取设置…</span>
+      </section>
+
+      <p class="page-status" id="pageStatus">正在检测当前页面…</p>
+    </main>
+
+    <footer>仅在 github.com 的文件差异页生效</footer>
+    <script src="popup.js"></script>
+  </body>
+</html>
